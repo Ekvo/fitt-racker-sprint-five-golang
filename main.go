@@ -226,6 +226,7 @@ func (s Swimming) Calories() float64 {
 func (s Swimming) TrainingInfo() InfoMessage {
 	var message = s.Training.TrainingInfo()
 	message.Speed = s.meanSpeed()
+	message.Distance = message.Speed * s.Duration.Hours()
 	return message
 }
 
